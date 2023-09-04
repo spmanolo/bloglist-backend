@@ -1,9 +1,13 @@
 require('dotenv').config()
+const { NODE_ENV, PORT, MONGODB_URI, TEST_MONGODB_URI } = process.env
 
-const PORT = process.env.PORT || 3001
-const MONGODB_URI = 'mongodb+srv://manolosan2001:nomelase@cluster0.robqroq.mongodb.net/meitexdb?retryWrites=true&w=majority'
+const port = PORT
+let connectionString = MONGODB_URI
+if (NODE_ENV === 'test') {
+  connectionString = TEST_MONGODB_URI
+}
 
 module.exports = {
-  PORT,
-  MONGODB_URI
+  port,
+  connectionString
 }

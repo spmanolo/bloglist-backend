@@ -7,7 +7,7 @@ const { requestLogger } = require('./utils/middlewares.js')
 const logger = require('./utils/logger.js')
 const mongoose = require('mongoose')
 
-mongoose.connect(config.MONGODB_URI)
+mongoose.connect(config.connectionString)
   .then(() => {
     logger.info('Database connect')
   })

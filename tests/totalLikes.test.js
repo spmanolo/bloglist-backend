@@ -1,6 +1,6 @@
-const { totalLikes, favouriteBlog } = require('../utils/list_helper.js')
+const { totalLikes, favouriteBlog } = require('./test_helper.js')
 
-describe('total likes', () => {
+describe.skip('total likes', () => {
   const listWithOneBlog = [
     {
       _id: '5a422aa71b54a676234d17f8',
@@ -74,7 +74,7 @@ describe('total likes', () => {
   })
 })
 
-describe.only('favourite blog', () => {
+describe('favourite blog', () => {
   const blogs = [
     {
       id: '5a422a851b54a676234d17f7',
