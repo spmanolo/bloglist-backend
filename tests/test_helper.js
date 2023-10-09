@@ -1,3 +1,5 @@
+const Blog = require('../models/blog.js')
+
 const initialBlogs = [
   {
     title: 'Este es mi blog',
@@ -19,8 +21,21 @@ const initialBlogs = [
   }
 ]
 
-function dummy(blogs) {
-  return 1
+async function blogsInDb() {
+  const blogs = await Blog.find({})
+  return blogs.map(blog => blog.toJSON())
+}
+
+async function nonExistingId() {
+  const blog = new Blog({
+    title: 'willremovethissoon',
+    author: 'pepe',
+    url: 'pepe.com'
+  })
+  await blog.save()
+  await blog.remove()
+
+  return blog.id.toString()
 }
 
 function totalLikes(blogs) {
@@ -44,8 +59,10 @@ function favouriteBlog(blogs) {
 function mostBlogs(blogs) { }
 
 module.exports = {
-  dummy,
+  initialBlogs,
   totalLikes,
   mostBlogs,
-  favouriteBlog
+  favouriteBlog,
+  blogsInDb,
+  nonExistingId
 }

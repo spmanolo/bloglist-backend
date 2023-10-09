@@ -2,8 +2,16 @@ POST http://localhost:3001/api/blogs
 Content-Type: application/json
 
 {
-  "title": "Esto es un nuevo blog",
-  "author": "Manuel",
-  "url": "miblog.com",
-  "likes": 0
+  "title": "Este es el mejor blog!!!!",
+  "author": "Juan",
+  "url": "elblogdejuan.com"
+}
+
+
+###
+POST http://localhost:3001/api/blogs
+Content-Type: application/json
+
+{
+  "author": "Juan"
 }
