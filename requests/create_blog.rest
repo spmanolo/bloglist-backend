@@ -13,5 +13,20 @@ POST http://localhost:3001/api/blogs
 Content-Type: application/json
 
 {
-  "author": "Juan"
+  "title": "Este es el blog de Pepe",
+  "author": "Pepe",
+  "url": "elblogdepepe.com",
+  "user": "6527feb0bb467f2ea28e47ac"
+}
+
+
+###
+POST http://localhost:3001/api/blogs
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InNwbWFub2xvIiwiaWQiOiI2NTI3ZmViMGJiNDY3ZjJlYTI4ZTQ3YWMiLCJpYXQiOjE2OTcxMjc0ODMsImV4cCI6MTY5NzEzMTA4M30.UFkRRVA1OJDoLaf6nWVUJEov8VqbXTTP3Cjc56MoWPY
+
+{
+  "title": "Este es el blog de Manolo",
+  "author": "Manolo",
+  "url": "tremendoblog.com"
 }
